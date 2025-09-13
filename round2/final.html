@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineers Day Registration</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background:url('./ukYlK1Z.jpg');
+      font-family: Arial, sans-serif;
+      color: yellow;
+
+    }
+    .card {
+      background-color:rgba(255, 255, 0,0.9);
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.5);
+      width: 50vw;
+      height: 45vh;
+      text-align: center;
+      color:black;
+    }
+    h2 {
+      margin-bottom: 20px;
+      text-shadow: 0 0 2px black;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    .row input, .row select {
+      width: 48%;
+      height:30px;
+      font-size:medium;
+      padding: 7px;
+      border: 1px solid yellow;
+      border-radius: 5px;
+      background-color: black;
+      color: yellow;
+      outline: none;
+    }
+    .row #event{
+        width:50%;
+        height:45px;
+        padding:10px;
+    }
+    .register-btn {
+      margin-top: 15px;
+      padding: 12px 20px;
+      background-color: rgb(159, 12, 105);
+      color: white;
+      font-size:medium;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width:100%;
+      box-shadow: 0 0 5px rgb(216, 10, 213);
+    }
+    .register-btn:hover {
+      transform: scale(1.01);
+    }
+    #message, #program {
+      margin-top: 15px;
+      font-weight: bold;
+      color: rgb(62, 7, 7);
+      text-shadow: 0 0 2px black;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>CS Engineers Day 2k25 Registration</h2>
+
+    <div class="row">
+      <input type="text" id="studentName" placeholder="Student Name">
+      <input type="text" id="regNumber" placeholder="Registration Number">
+    </div>
+
+    <div class="row">
+      <select id="event">
+        <option value="">Select Event</option>
+        <option value="Coding Contest">Coding Contest</option>
+        <option value="Web Design">Web Design</option>
+        <option value="Technical Quiz">Technical Quiz</option>
+        <option value="Talent Execution">Talent Execution</option>
+      </select>
+      <input type="text" id="accessCode" placeholder="Access Code">
+    </div>
+
+    <button class="register-btn" onclick="register()">Register</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+
+    function isAlphaDotSpace(str) {
+      return /^[a-zA-Z.\s]+$/.test(str);
+    }
+    function register() {
+      const name = document.getElementById("studentName").value.trim();
+      const regNumber = document.getElementById("regNumber").value.trim();
+      const event = document.getElementById("event").value;
+      const accessCode = document.getElementById("accessCode").value.trim();
+      const message = document.getElementById("message");
+      // Validation
+      if(name.length===0)
+      {
+        alert("please enter the name..")
+        return;
+      }
+      if(!isAlphaDotSpace(name))
+      {
+        alert("The name field allows only characters, spaces and dots. numbers and special characters will be not allowed")
+        return;
+      }
+      if(name)
+      if (regNumber.length !== 10) {
+        alert("Registration number must be 10 characters long.");
+        message.textContent = "";
+        return;
+      }
+      if (!(regNumber[6] === "0" && regNumber[7] === "5")) {
+        alert("Registration number must have '05' at position 7 and 8.");
+        message.textContent = "";
+        return;
+      }
+      if (accessCode !== "cse2k26") {
+        alert("Invalid access code.");
+        message.textContent = "";
+        return;
+      }
+      if (name === "" || event === "") {
+        alert("Please fill all fields.");
+        message.textContent = "";
+        return;
+      }
+      message.textContent = `${name} !  you registered sucessfully... \n registered event is ${event}`;
+    }
+  </script>
+
+</body>
+</html>

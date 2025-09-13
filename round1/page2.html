@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Event Cards</title>
+  <style>
+    :root{
+      --yellow: yellow;
+      --black: #000000;
+      --card-radius: 12px;
+      --card-gap: 20px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:url('./bg3.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color:var(--black);
+      padding:32px;
+    }
+
+    .wrapper{
+      width:100%;
+      max-width:1100px;
+    }
+
+    h1{
+      text-align:center;
+      color:yellow;
+      text-shadow: 0 0 4px;
+      margin-bottom:30px;
+      font-size:28px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:var(--card-gap);
+    }
+
+    .card{
+      background:var(--yellow);
+      color:var(--black);
+      border-radius:var(--card-radius);
+      overflow:hidden;
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+      display:flex;
+      flex-direction:column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .img-wrap img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .card-content{
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      flex:1;
+    }
+
+    .event-title{
+      font-size:20px;
+      margin:0 0 8px 0;
+      font-weight:700;
+    }
+
+    .desc{
+      font-size:14px;
+      line-height:1.4;
+      margin:0 0 12px 0;
+    }
+
+    .btn-register{
+      display:inline-block;
+      text-decoration:none;
+      padding:6px 8px;
+      width:80px;
+      background:var(--black);
+      color:var(--yellow);
+      border-radius:5px;
+      font-weight:600;
+      text-align:center;
+      transition:background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 0 2px black;
+    }
+
+    .btn-register:hover{
+      background:#333;
+      transform:scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Explore Events Here...</h1>
+
+    <div class="cards">
+      <article class="card">
+        <div class="img-wrap">
+          <img src="./code.jpeg" alt="Coding Competition">
+        </div>
+        <div class="card-content">
+          <h2 class="event-title">Coding Competition</h2>
+          <p class="desc">Put your problem solving and programming skills to the test. Individual and team categories available — show off your speed and logic under timed rounds.</p>
+          <a href="#" class="btn-register">Register</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img-wrap">
+          <img src="./web.jpg" alt="Web Design">
+        </div>
+        <div class="card-content">
+          <h2 class="event-title">Web Design</h2>
+          <p class="desc">Design beautiful and accessible web pages. Participants will be judged on UI, UX, responsiveness and creativity. Bring your mockups or build live.</p>
+          <a href="#" class="btn-register">Register</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="img-wrap">
+          <img src="./quiz.jpeg" alt="Technical Quiz">
+        </div>
+        <div class="card-content">
+          <h2 class="event-title">Technical Quiz</h2>
+          <p class="desc">Test your knowledge across CS topics — algorithms, OS, networks and databases. Fast-paced rounds with elimination stages and exciting prizes.</p>
+          <a href="#" class="btn-register">Register</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</body>
+</html>

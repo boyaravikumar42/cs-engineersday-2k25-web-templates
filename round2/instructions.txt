@@ -1,0 +1,26 @@
+Instructions for Validation:
+
+1.  Name Field
+    -   The name field must not be empty.
+        -   If empty → Show alert: “Name field cannot be empty”
+    -   It must contain only alphabets, spaces, and dots.
+        -   If invalid → Show alert: “Name can contain only letters,
+            spaces, and dots”
+2.  Register Number
+    -   It must be exactly 10 characters long.
+        -   If not → Show alert: “Register number must be exactly 10
+            characters”
+    -   The 6th and 7th characters must be “05”.
+        -   If not → Show alert: “Register number must have ‘05’ at 6th
+            and 7th position”
+3.  Access Code
+    -   It must be exactly “cse2k26” (case-sensitive).
+        -   If not → Show alert: “Invalid access code”
+4.  Success Message
+    -   If all validations pass, display:
+        ! you registered successfully…
+        registered event is
+
+    Example Output:
+    Hinata! you registered successfully…
+    registered event is Coding Competition
